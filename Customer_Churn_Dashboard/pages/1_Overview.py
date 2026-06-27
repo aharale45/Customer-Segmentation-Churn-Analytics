@@ -1,9 +1,15 @@
 import streamlit as st
 import pandas as pd
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_FILE = BASE_DIR / "European_Bank (1).csv"
+
+df = pd.read_csv(DATA_FILE)
 
 st.title("📊 Customer Overview")
 
-df = pd.read_csv("European_Bank (1).csv")
+
 
 total_customers = len(df)
 
