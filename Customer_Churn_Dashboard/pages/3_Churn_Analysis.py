@@ -1,11 +1,17 @@
 import streamlit as st
-import pandas as pd
 import plotly.express as px
+import pandas as pd
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_FILE = BASE_DIR / "European_Bank (1).csv"
+
+df = pd.read_csv(DATA_FILE)
 
 st.title("📉 Churn Analysis")
 
 # Load Dataset
-df = pd.read_csv("European_Bank (1).csv")
+
 
 st.sidebar.header("Filters")
 
